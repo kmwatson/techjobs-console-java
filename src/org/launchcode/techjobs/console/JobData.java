@@ -96,21 +96,30 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
         //iterate through the first row
         for (HashMap<String, String> row : allJobs) {
+            //System.out.println(row.values());
 
-            String aValue = row.get(value);
+            if (row.values().contains(value)) {
+                jobs.add(row);
+                continue;
+            }
+
+           /* String aValue = row.get(value);
             //check to see if the row contains the value
             if (aValue.contains(value)) {
                 //check to see if the job is already in the ArrayList
-                if (jobs.contains(/*job listing row; maybe iterate through HashMaps but that seems like unnecessary code, a lot of computing power*/)) {
+                if (jobs.contains(/*job listing row; maybe iterate through HashMaps but that seems like unnecessary code, a lot of computing power*///)) {
                     //if so go on to the next value
-                    continue;
+                   /* continue;
                 //if it is not add the row to the ArrayList
                 } else {
                     jobs.add(row);
                 }
             }
+        */
+
         }
         //return the ArrayList
+        //System.out.println(jobs);
         return jobs;
 
     }
