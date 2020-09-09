@@ -96,12 +96,23 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
         //iterate through the first row
         for (HashMap<String, String> row : allJobs) {
-            //System.out.println(row.values());
-
-            if (row.values().contains(value)) {
+           //set the input value to lowercase
+            //for(String row :)
+            value = value.toLowerCase();
+            String rowValue = row.values().toString().toLowerCase();
+            //set string in row to lowercase
+            //have to go through each string in hashmap
+            //System.out.println(rowValue);
+            //System.out.println(value);
+            if (rowValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
                 continue;
             }
+
+
+
+
+
 
            /* String aValue = row.get(value);
             //check to see if the row contains the value
